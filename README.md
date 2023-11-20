@@ -1,6 +1,6 @@
 # DADA2
 
-#Load required libraries
+##Load required libraries
 library(dada2)
 library(phyloseq)
 library(Biostrings)
@@ -8,7 +8,7 @@ library(ggplot2)
 library(randomcoloR)
 library(dplyr)
 
-#Set working directory 
+###Set working directory 
 setwd("/Users/hanlanmcdougall/Desktop/Assignment3")
 path <- "/Users/hanlanmcdougall/Desktop/Assignment3"
 list.files(path)
@@ -67,7 +67,7 @@ table(nchar(getSequences(seqtab)))
 #Remove chimeras
 seqtab.nochim <- removeBimeraDenovo(seqtab, method="consensus", multithread=TRUE, verbose=TRUE)
 
-#Not a necessary step, but helpful to track reads through the pipeline 
+#Not a necessary step, but helpful to track reads through the pipeline :EMOJICODE😀
 getN <- function(x) sum(getUniques(x))
 track <- cbind(out, sapply(dadaFs, getN), sapply(dadaRs, getN), sapply(mergers, getN), rowSums(seqtab.nochim))
 colnames(track) <- c("input", "filtered", "denoisedF", "denoisedR", "merged", "nonchim")
@@ -111,7 +111,7 @@ samples.out <- rownames(seqtab.nochim) #naming the samples as the row names
 samdf <- data.frame(samples.out) #making the sample names a data frame
 rownames(samdf) <- samples.out #taking samples out and making it a function with names
 
-#Hand off data to phyloseq 
+##Hand off data to phyloseq 
 ps <- phyloseq(otu_table(seqtab.nochim, taxa_are_rows=FALSE), sample_data(samdf), tax_table(taxa))
 
 #use biostrings function to use the word ASV and # instead of seeing the full sequence - makes it easier computing wise

@@ -1,23 +1,25 @@
-# DADA2
-
-Load required libraries
+# DADA2 Pipeline 
+Adapted from the DADA2 tutorial: https://benjjneb.github.io/dada2/tutorial.html
++
+**Load required libraries**
 + library(dada2)
 + library(phyloseq)
 + library(Biostrings)
 + library(ggplot2)
 + library(randomcoloR)
-library(dplyr)
-
-Set working directory 
++ library(dplyr)
++
+**Set working directory**
 setwd("/Users/hanlanmcdougall/Desktop/Assignment3")
 path <- "/Users/hanlanmcdougall/Desktop/Assignment3"
-list.files(path)
-
-Forward fastq filenames have the format: SAMPLENAME_R1_001.fastq.gz and reverse fastq files have the format: SAMPLENAME_R2_001.fastq.gz
++
+#Important samples
++
+**Forward fastq filenames have the format: SAMPLENAME_R1_001.fastq.gz and reverse fastq files have the format:SAMPLENAME_R2_001.fastq.gz**
 fnFs <- sort(list.files(path, pattern="_R1_001.fastq.gz", full.names=TRUE))
 fnRs <- sort(list.files(path,pattern="_R2_001.fastq.gz", full.names=TRUE))
-
-Extract sample names
++
+**Extract sample names**
 sample.names <- sapply(strsplit(basename(fnFs), "_"), `[`, 1)
 
 Visualize quality of forward reads

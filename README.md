@@ -2,10 +2,10 @@
 
 Load required libraries
 + library(dada2)
-library(phyloseq)
-library(Biostrings)
-library(ggplot2)
-library(randomcoloR)
++ library(phyloseq)
++ library(Biostrings)
++ library(ggplot2)
++ library(randomcoloR)
 library(dplyr)
 
 Set working directory 

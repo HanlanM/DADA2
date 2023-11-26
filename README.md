@@ -19,7 +19,7 @@ path <- "/Users/directory/foldername"
 
 ## Import samples
 
-**Forward fastq filenames have the format: SAMPLENAME_R1_001.fastq.gz and reverse fastq files have the format:SAMPLENAME_R2_001.fastq.gz**
+**Set the pattern for how the files are named (make sure they are consistent!) In this example, forward fastq filenames have the format: SAMPLENAME_R1_001.fastq.gz and reverse fastq files have the format:SAMPLENAME_R2_001.fastq.gz**
 ``` {}
 fnFs <- sort(list.files(path, pattern="_R1_001.fastq.gz", full.names=TRUE))
 fnRs <- sort(list.files(path,pattern="_R2_001.fastq.gz", full.names=TRUE))

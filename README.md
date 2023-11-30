@@ -1,5 +1,5 @@
 # DADA2 Pipeline 
-Adapted from the DADA2 tutorial: https://benjjneb.github.io/dada2/tutorial.html
+Adapted from the DADA2 tutorial: https://benjjneb.github.io/dada2/tutorial.html for the ENVS 6452 class 
 
 **Load required libraries**
 ```{}
